@@ -3,6 +3,6 @@
 
 How to run this project?
 
-source virt/bin/activate
-python app.py
-Goto localhost:3000/
+1. source virt/bin/activate
+2. python app.py
+3. Goto localhost:3000/
