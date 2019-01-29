@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Display Strategies</title>
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='input.css') }}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css" />
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+   </head>
+   <body style="background-image: url('/static/img/Stock2.jpeg'); background-size: 1300px 800px;">
+      <div style="margin-left: 50px">
+         <h2 id="headerStock">A Stock Profile Suggestion App</h2>
+         <div id="outerBorder">
+            <div class="vertical-radio-buttons" style="margin: 30px; margin-bottom: 30px; width:540px; padding-bottom: 20px; padding-left: 20px; padding-top: 10px">
+               <h4 style="font-size: 18px; color: black">{{errorMessage}}</h4>
+            </div>
+         </div>
+      </div>
+      <br><br>
+      <marquee direction = "left">
+         <table class="newsbox" scrollamount="2">
+            <tr>
+               <td>
+                  <div >
+                     <a style="display:block;color:black; width: 700px; " href="https://www.cnbc.com/2018/12/14/reuters-america-us-stocks-snapshot-wall-st-tumbles-on-global-economic-worries-jj-drags-sp-dow.html?&qsearchterm=Dow" target="_blank" ><b><font color="808080">US STOCKS SNAPSHOT-Wall St tumbles on global economic worries; J&J drags S&P, Dow</font color></b></a>
+                  </div>
+               </td>
+               <td>
+                  <div>
+                     <a style="display:block;color:black; width: 700px; " href="https://www.bloombergquint.com/global-economics/fed-to-slow-2019-rate-hikes-as-downside-risks-mount-poll-shows#gs.hISvBRU" target="_blank" ><b><font color="808080">Fed to Slow 2019 Rate Hikes Amid Downside Risks, Poll Shows</font color></b></a>
+                  </div>
+               </td>
+               <td>
+                  <div >
+                     <a style="display:block;color:black; width: 500px; " href="https://www.bloombergquint.com/business/china-cuts-tax-on-u-s-vehicles-in-move-to-soothe-trade-tensions#gs.oxeWXU0" target="_blank" ><b><font color="808080">China Seeks to Defuse Trade War With Reversals on Cars, Corn</font color></b></a>
+                  </div>
+               </td>
+               <td>
+                  <div >
+                     <a style="display:block;color:black; width: 500px; " href="https://www.bloombergquint.com/business/pimco-sees-flashing-orange-u-s-recession-signal-as-cycle-ages#gs.KAUlGTk" target="_blank" ><b><font color="808080">Pimco Sees ‘Flashing Orange’ U.S. Recession Signal as Cycle Ages</font color></b></a>
+                  </div>
+               </td>
+               <td>
+                  <div >
+                     <a style="display:block;color:black; width: 500px; " href="https://www.bloombergquint.com/business/oil-set-for-3rd-weekly-gain-as-saudis-aim-supply-cuts-at-u-s#gs.NVhVgQY" target="_blank" ><b><font color="808080">Oil Loses Ground as U.S. Shale Growth Undermines OPEC+ Cuts</font color></b></a>
+                  </div>
+               </td>
+               <td>
+                  <div >
+                     <a style="display:block;color:black; width: 500px; " href="https://www.cnbc.com/2018/12/14/us-stock-futures-dow-jones-sp-500-nasdaq-to-open-lower-on-friday.html?&qsearchterm=Dow" target="_blank" ><b><font color="808080">Dow dives about 500 points to its lowest close since May</font color></b></a>
+                  </div>
+               </td>
+            </tr>
+         </table>
+      </marquee>
+   </body>
+</html>

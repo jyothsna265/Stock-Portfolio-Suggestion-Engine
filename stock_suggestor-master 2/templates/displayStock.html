@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Results page</title>
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='results.css') }}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css" />
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+   </head>
+   <body style="background-image: url('/static/img/Stock2.jpeg'); background-size: 1300px 800px;" >
+      <div class="container-fluid">
+         <div class="row mt-5" style="max-width: 92rem !important; text-align: center;">
+            <div class="col-md-3">
+               <h3 style="color: white !important;" class="headerStock">Results</h3>
+            </div>
+            <div class="col-md-9">
+               <h3 style="color: white !important;" class="headerStock">Amount to be invested: {{investment_amount}}</h3>
+            </div>
+         </div>
+         <div class="row" style="max-width: 92rem !important; margin-top: 2%;">
+            <div class="col-md-5 outerBorder" style="margin-left: 2%">
+               <div class="row" style="margin-bottom: 2%; margin-top: 2%;">
+                  <h3 style="font-size: 22px; color: seagreen;">Choosen Strategy: {{strategy1}}</h3>
+               </div>
+               <div class="row">
+                  <table border="1">
+                     <tr style="font-size: 20px; color: green; text-align: center">
+                        <th style="padding: 10px">Stock Name</th>
+                        <th style="padding: 10px">Price</th>
+                        <th style="padding: 10px">Change</th>
+                        <th style="padding: 10px">Investment</th>
+                        {% for strategy in strategies %}
+                        <div class="row">
+                           <span>
+                           <input id="valueinvesting" type="checkbox" name="strategies" value="{{strategy}}">
+                           <label for="valueinvesting">{{strategy}}</label>
+                           </span>
+                        </div>
+                        {% endfor %}
+
+                     <tr style="font-size: 20px; color: black; text-align: center">
+                        <td style="padding: 10px">{{compName[0]}}</td>
+                        <td style="padding: 10px">{{latestPrice[0]}}</td>
+                        <td style="padding: 10px">{{changeInPrice[0]}}</td>
+                        <td style="padding: 10px">{{amount1}}</td>
+                     </tr>
+                     <tr style="font-size: 20px; color: black; text-align: center">
+                        <td style="padding: 10px">{{compName[1]}}</td>
+                        <td style="padding: 10px">{{latestPrice[1]}}</td>
+                        <td style="padding: 10px">{{changeInPrice[1]}}</td>
+                        <td style="padding: 10px">{{amount2}}</td>
+                     </tr>
+                     <tr style="font-size: 20px; color: black; text-align: center">
+                        <td style="padding: 10px">{{compName[2]}}</td>
+                        <td style="padding: 10px">{{latestPrice[2]}}</td>
+                        <td style="padding: 10px">{{changeInPrice[2]}}</td>
+                        <td style="padding: 10px">{{amount3}}</td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+            <div id="second_strategy" class="col-md-5 outerBorder" style="margin-left: 12%">
+               <div class="row" style="margin-bottom: 2%; margin-top: 2%;">
+                  <h3 style="font-size: 22px; color: seagreen;">Choosen Strategy: {{strategy2}}</h3>
+               </div>
+               <div class="row">
+                  <table border="1">
+                     <tr style="font-size: 20px; color: green; text-align: center">
+                        <th style="padding: 10px">Stock Name</th>
+                        <th style="padding: 10px">Price</th>
+                        <th style="padding: 10px">Change</th>
+                        <th style="padding: 10px">Investment</th>
+                     </tr>
+                     <tr style="font-size: 20px; color: black; text-align: center">
+                        <td style="padding: 10px">{{compName[3]}}</td>
+                        <td style="padding: 10px">{{latestPrice[3]}}</td>
+                        <td style="padding: 10px">{{changeInPrice[3]}}</td>
+                        <td style="padding: 10px">{{amount1}}</td>
+                     </tr>
+                     <tr style="font-size: 20px; color: black; text-align: center">
+                        <td style="padding: 10px">{{compName[4]}}</td>
+                        <td style="padding: 10px">{{latestPrice[4]}}</td>
+                        <td style="padding: 10px">{{changeInPrice[4]}}</td>
+                        <td style="padding: 10px">{{amount2}}</td>
+                     </tr>
+                     <tr style="font-size: 20px; color: black; text-align: center">
+                        <td style="padding: 10px">{{compName[5]}}</td>
+                        <td style="padding: 10px">{{latestPrice[5]}}</td>
+                        <td style="padding: 10px">{{changeInPrice[5]}}</td>
+                        <td style="padding: 10px">{{amount3}}</td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+         </div>
+         <div class="row" style="text-align: center; max-width: 92rem !important; margin-top: 2%;">
+            <!-- <div class="col-md-3"></div> -->
+            <div class="col-md-3"><button style="background-color: green; width: 25%;" class="button">Back</button></div>
+             <!-- <form class="container" id="options" action="/portfolio" method="post" name ="portfolio"> -->
+            <div class="col-md-3"><button style="background-color: green; width: 25%;" class="button" type="submit" value="Submit">History</button></div>
+         <!-- </form> -->
+            <!-- <div class="col-md-3"></div> -->
+         </div>
+      </div>
+      <script>
+         var check = {{two_strategies}};
+         if (check == 1)
+         {
+             document.getElementById("second_strategy").style.visibility="visible";
+         }else{
+          document.getElementById("second_strategy").style.visibility="hidden";
+         }
+      </script>
+      <marquee direction = "left">
+         <table class="newsbox" scrollamount="2">
+            <tr>
+               <td>
+                  <div >
+                     <a style="display:block;color:black; width: 100px; " href="https://www.adobe.com/" target="_blank" ><b><font color="808080">Adobe</font color></b></a>
+                  </div>
+               </td>
+               <td>
+                  <div>
+                     <a style="display:block;color:black; width: 100px; " href="https://www.microsoft.com/en-us/" ><b><font color="808080">Microsoft</font color></b></a>
+                  </div>
+               </td>
+               <td>
+                  <div >
+                     <a style="display:block;color:black; width: 100px; " href="https://www.apple.com/" target="_blank" ><b><font color="808080">Apple</font color></b></a>
+                  </div>
+               </td>
+               <td>
+                  <div >
+                     <a style="display:block;color:black; width: 100px; " href="https://www.usa.philips.com/" ><b><font color="808080">Philips</font color></b></a>
+                  </div>
+               </td>
+               <td>
+                  <div >
+                     <a style="display:block;color:black; width: 100px; " href="https://www.amazon.com/" target="_blank" ><b><font color="808080">Amazon</font color></b></a>
+                  </div>
+               </td>
+               <td>
+                  <div >
+                     <a style="display:block;color:black; width: 100px; " href="https://www.tesla.com/" target="_blank" ><b><font color="808080">Tesla</font color></b></a>
+                  </div>
+               </td>
+            </tr>
+         </table>
+      </marquee>
+      <br><br>
+      <marquee direction = "left">
+         <table class="newsbox" scrollamount="2">
+            <tr>
+               <td>
+                  <div >
+                     <a style="display:block;color:black; width: 100px; " target="_blank" ><b><font color="808080">Stock values are subjected to market risk. Please invest at your own risk</font color></b></a>
+                  </div>
+               </td>
+            </tr>
+         </table>
+      </marquee>
+   </body>
+</html>
